@@ -1,0 +1,11 @@
+.gitattributes
+.gitignore
+.mvn/
+Dockerfile
+README.md
+docker/
+k8s/
+mvnw
+mvnw.cmd
+pom.xml
+scripts/

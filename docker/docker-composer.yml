@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0.25
+    platform: linux/amd64
+    hostname: mysql
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: java-crud
+      MYSQL_ROOT_PASSWORD: "12345"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci --character-set-filesystem=utf8 --lower-case-table-names=0 --max_allowed_packet=100M
+    networks:
+      - app_network
+  adminer:
+    image: adminer:5.0.6
+    hostname: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 7070:8080
+    networks:
+      - app_network
+  crud:
+    image: marceloagmelo/java-crud:1.0
+    platform: linux/amd64
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: crud
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS_EXT: -Dfile.encoding=UTF8
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: java-crud
+      MYSQL_USER: root
+      MYSQL_PASS: 12345
+    depends_on:
+      - mysql
+    networks:
+      - app_network
+networks:
+  app_network:
+    name: app_network

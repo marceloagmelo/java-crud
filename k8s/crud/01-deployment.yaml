@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud
+  labels:
+    app: crud
+spec:
+  selector:
+    matchLabels:
+      app: crud
+  template:
+    metadata:
+      labels:
+        app: crud
+    spec:
+      containers:
+        - name: crud
+          image: marceloagmelo/java-crud:1.0
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MYSQL_HOST
+              value: mysql-service
+            - name: MYSQL_USER
+              value: root
+            - name: MYSQL_PASS
+              value: "12345"
+            - name: MYSQL_DATABASE
+              value: java-crud

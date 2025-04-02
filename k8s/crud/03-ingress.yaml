@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: crud-ingress
+  labels:
+    app: crud
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: "traefik"
+  rules:
+  - host: java.crud.marceloagmelo.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: crud-service
+            port:
+              number: 8080
