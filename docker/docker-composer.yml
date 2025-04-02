@@ -5,7 +5,7 @@ services:
     image: mysql:8.0.25
     platform: linux/amd64
     hostname: mysql
-    container_name: mysql
+    container_name: mysql-service
     restart: always
     ports:
       - "3306:3306"
@@ -37,7 +37,7 @@ services:
       - "8080:8080"
     environment:
       JAVA_OPTS_EXT: -Dfile.encoding=UTF8
-      MYSQL_HOST: mysql
+      MYSQL_HOST: mysql-service
       MYSQL_DATABASE: java-crud
       MYSQL_USER: root
       MYSQL_PASS: 12345
