@@ -140,7 +140,7 @@ Para rodar em containers no kubernetes executar o seguinte comando:
 ./scripts/startKubernetes.sh
 ```
 
-Irão subir os containers e um de apoio:
+Irão subir os containers:
 
 - Mysql: Banco de dados do backend
 - Adminer: Aplicação web para administrar o banco de dados
@@ -151,6 +151,13 @@ Irão subir os containers e um de apoio:
     Senha: 12345
     Banco de Dados: teste-kafka
 - Crud: Aplicação de CRUD
+
+```
+./scripts/removeKubernetes.sh
+```
+
+Irão derrubar os containers:
+
 
 ## Observação
 
