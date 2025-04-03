@@ -44,10 +44,10 @@ Irão subir os containers:
 - Mysql: Banco de dados do backend
 - Adminer: Aplicação web para administrar o banco de dados
 > http://localhost:7070
-    Servidor: mysql
+    Servidor: mysql-service
     Usuário: root
     Senha: 12345
-    Banco de Dados: teste-kafka
+    Banco de Dados: java-crud
 - Crud: Aplicação de CRUD
 
 ## Serviços
@@ -146,10 +146,10 @@ Irão subir os containers:
 - Adminer: Aplicação web para administrar o banco de dados
 > http://java.crud.adminer.marceloagmelo.net
 
-    Servidor: mysql
+    Servidor: mysql-service
     Usuário: root
     Senha: 12345
-    Banco de Dados: teste-kafka
+    Banco de Dados: java-crud
 - Crud: Aplicação de CRUD
 
 ```
