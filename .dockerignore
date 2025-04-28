@@ -7,5 +7,5 @@ docker/
 k8s/
 mvnw
 mvnw.cmd
-pom.xml
+#pom.xml
 scripts/

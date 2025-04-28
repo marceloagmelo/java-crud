@@ -26,7 +26,7 @@ services:
     networks:
       - app_network
   crud:
-    image: marceloagmelo/java-crud:1.0
+    image: marceloagmelo/java-crud:1.1.0
     platform: linux/amd64
     build:
       context: ../
