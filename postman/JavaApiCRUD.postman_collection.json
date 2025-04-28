@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "732e1703-a391-4483-b8a3-606fa3b779f4",
+		"name": "Java Api CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2860905"
+	},
+	"item": [
+		{
+			"name": "Criar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Marcely\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes/9",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nome\": \"Marcelo Melo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://javakafka.producer.marceloagmelo.net/clientes/1",
+					"protocol": "http",
+					"host": [
+						"javakafka",
+						"producer",
+						"marceloagmelo",
+						"net"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nome\": \"Marcelo Melo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://javakafka.producer.marceloagmelo.net/clientes/1",
+					"protocol": "http",
+					"host": [
+						"javakafka",
+						"producer",
+						"marceloagmelo",
+						"net"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
